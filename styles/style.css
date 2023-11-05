@@ -24,3 +24,7 @@ body {
 .etch-cell {
     flex: 1;
 }
+
+.hovered {
+    background-color: black;
+}
