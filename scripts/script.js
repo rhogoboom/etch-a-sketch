@@ -21,7 +21,6 @@ function createRow(container, size) {
 
 function hoverBox(e) {
     e.target.classList.add('hovered')
-    console.dir(e);
 }
 
 function createCell() {
