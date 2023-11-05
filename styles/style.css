@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px black solid;
+}
+
+.etch-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex: auto;
+}
+
+.etch-cell {
+    flex: 1;
+}
