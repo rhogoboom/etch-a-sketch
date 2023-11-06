@@ -35,7 +35,7 @@ function createRow(size) {
 
 function hoverBox(e) {
     if (e.ctrlKey) {
-        e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+        e.target.style.backgroundColor = 'rgba(255, 255, 255, 1)';
     } else {
         const options = [...document.querySelectorAll('.options button')];
         let currentOption;
