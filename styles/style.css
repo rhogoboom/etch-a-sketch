@@ -35,6 +35,25 @@ button {
     flex: 1;
 }
 
-.hovered {
+.option-normal {
     background-color: black;
+}
+
+.option-random-rgb {
+    background-color: blue;
+}
+
+.option-fade {
+
+}
+
+.options {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+
+}
+
+.current-option {
+    background-color: aqua;
 }
