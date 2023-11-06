@@ -35,9 +35,8 @@ function createRow(size) {
 
 function hoverBox(e) {
     if (e.ctrlKey) {
-        e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.9)'
+        e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
     } else {
-        console.log('check');
         const options = [...document.querySelectorAll('.options button')];
         let currentOption;
         options.forEach(option => {
@@ -67,32 +66,8 @@ function hoverBox(e) {
         
     }
 
-    const options = [...document.querySelectorAll('.options button')];
-    let currentOption;
-    options.forEach(option => {
-        if (option.classList.contains('current-option')) {
-            currentOption = option.id;
-        }
-    })
+    
 
-    if (currentOption === 'option-normal') {
-        e.target.style.backgroundColor = 'rgba(0,0,0,1)';
-    } else if (currentOption === 'option-random-rgb') {
-        e.target.style.backgroundColor = randomRGBA();
-    } else if (currentOption === 'option-fade') {
-        if (e.target.style.backgroundColor === '') {
-            e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'
-        }
-        else {
-            let bgArray = e.target.style.backgroundColor.split(',');
-            let alpha = parseFloat(bgArray[3]);
-            alpha = Math.min(1, alpha + 0.1);
-            bgArray[3] = " " + alpha + ")";
-            const bgString = bgArray.join();
-            e.target.style.backgroundColor = bgString;
-        }
-        
-    }
 
 }
 
