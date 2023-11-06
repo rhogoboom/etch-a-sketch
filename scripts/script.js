@@ -1,12 +1,18 @@
 populateContainer();
 
-function populateContainer() {
-    const container = document.querySelector('.container');
-    let n = 50;
+const resolutionButton = document.querySelector('.resolution-button');
 
-    for (let i = 0; i < n; i++) {
-        createRow(container, n);
+resolutionButton.addEventListener('click', handleResolutionClick);
+
+function populateContainer(size=16) {
+    const container = document.querySelector('.container');
+    const newRows = []
+
+    for (let i = 0; i < size; i++) {
+        const newRow = createRow(container, size);
+        newRows.push(newRow);
     }
+    container.replaceChildren(...newRows)
 }
 
 function createRow(container, size) {
@@ -16,7 +22,9 @@ function createRow(container, size) {
         
         newRow.appendChild(createCell());
     }
-    container.appendChild(newRow);
+
+    return newRow
+    
 }
 
 function hoverBox(e) {
@@ -29,3 +37,18 @@ function createCell() {
     newDiv.addEventListener('mouseenter', hoverBox);
     return newDiv
 }
+
+function getNewSize() {
+    let newSize;
+    do {
+        newSize = parseInt(prompt("Please enter a size"));
+
+    } while (newSize <= 0 || newSize > 100);
+    return newSize;
+
+}
+
+function handleResolutionClick() {
+    populateContainer(getNewSize());
+}
+
