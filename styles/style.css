@@ -36,18 +36,6 @@ button {
     background-color: rgba(255,255,255,0);
 }
 
-.option-normal {
-    background-color: black;
-}
-
-.option-random-rgb {
-    background-color: blue;
-}
-
-.option-fade {
-
-}
-
 .options {
     display: flex;
     gap: 8px;
