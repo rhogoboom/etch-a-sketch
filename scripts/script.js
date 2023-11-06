@@ -35,14 +35,30 @@ function createRow(size) {
 
 function hoverBox(e) {
     const options = [...document.querySelectorAll('.options button')];
-    let newOption;
+    let currentOption;
     options.forEach(option => {
         if (option.classList.contains('current-option')) {
-            newOption = option.id;
+            currentOption = option.id;
         }
     })
-    
-    e.target.classList.add(newOption)
+
+    if (currentOption === 'option-normal') {
+        e.target.style.backgroundColor = 'black';
+    } else if (currentOption === 'option-random-rgb') {
+        e.target.style.backgroundColor = randomRGB();
+    }
+
+}
+
+function randomRGBInput() {
+    return Math.floor(Math.random() * 256);
+}
+
+function randomRGB() {
+    const r = randomRGBInput();
+    const g = randomRGBInput();
+    const b = randomRGBInput();
+    return "rgb(" + r + "," + g + "," + b+")";
 }
 
 function createCell() {
@@ -80,13 +96,4 @@ function handleOptionClick(e) {
 
     
  
-}
-
-function updateListeners() {
-    const cells = [...document.querySelectorAll('.etch-cell')];
-
-    cells.forEach(cell => {
-        cell.removeEventListener('click', hoverBox);
-        cell.addEventListener('click', hoverBox);
-    })
 }
